@@ -1,0 +1,14 @@
+.DS_Store
+.settings/
+target
+log
+.idea/
+.classpath
+.project
+.metadata
+RemoteSystemsTempFiles
+*.iml
+*.log
+logs
+dist.zip
+__pycache__
