@@ -81,6 +81,7 @@ class SnowflakeIdGenerator:
             if self.current_sequence is None or self.current_sequence.timestamp < current_timestamp:
                 next_sequence = self.__sequence(0, current_timestamp)
             elif self.current_sequence.timestamp == current_timestamp:
+                # 本毫秒发完等待下一毫秒
                 next_value = self.current_sequence.value + 1 & self.sequence_mask
                 if next_value == 0:
                     current_timestamp = self.wait_next_timestamp()
